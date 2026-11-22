@@ -1,0 +1,190 @@
+* Fresh Xschem-generated 4-bit CMOS adder test
+.lib "sky130.lib.spice" tt
+** sch_path: ./xschem/four_bit_adder/four_bit_adder.sch
+**.subckt four_bit_adder A0 B0 Cin vdd A1 B1 A2 B2 A3 B3 S0 S1 S2 S3 Cout
+*.ipin A0
+*.ipin B0
+*.ipin Cin
+*.ipin vdd
+*.ipin A1
+*.ipin B1
+*.ipin A2
+*.ipin B2
+*.ipin A3
+*.ipin B3
+*.opin S0
+*.opin S1
+*.opin S2
+*.opin S3
+*.opin Cout
+XFA0 A0 B0 Cin S0 C1 vdd CMOS_FULL_ADDER
+XFA1 A1 B1 C1 S1 C2 vdd CMOS_FULL_ADDER
+XFA2 A2 B2 C2 S2 C3 vdd CMOS_FULL_ADDER
+XFA3 A3 B3 C3 S3 Cout vdd CMOS_FULL_ADDER
+**.ends
+
+* expanding   symbol:  ./xschem/full_adder/CMOS_FULL_ADDER.sym # of
+*+ pins=6
+** sym_path: ./xschem/full_adder/CMOS_FULL_ADDER.sym
+** sch_path: ./xschem/full_adder/CMOS_FULL_ADDER.sch
+.subckt CMOS_FULL_ADDER A B Cin Sum Cout vdd
+*.ipin A
+*.ipin B
+*.ipin Cin
+*.opin Sum
+*.opin Cout
+*.ipin vdd
+XMP1 n1 A vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP2 n1 B vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN1 n1 A n1a 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN2 n1a B 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP3 n2 A vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP4 n2 n1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN3 n2 A n2a 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN4 n2a n1 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP5 n3 B vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP6 n3 n1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN5 n3 B n3a 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN6 n3a n1 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP7 X n2 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP8 X n3 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN7 X n2 n4 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN8 n4 n3 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP9 n5 X vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP10 n5 Cin vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN9 n5 X n5a 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN10 n5a Cin 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP11 n6 X vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP12 n6 n5 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN11 n6 X n6a 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN12 n6a n5 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP13 n7 Cin vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP14 n7 n5 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN13 n7 Cin n7a 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN14 n7a n5 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP15 Sum n6 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP16 Sum n7 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN15 Sum n6 n8 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN16 n8 n7 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMP17 Cout n1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMP18 Cout n5 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad=0.29
++ as=0.29 pd=2.58 ps=2.58
++ nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0 mult=1 m=1
+XMN17 Cout n1 n9 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+XMN18 n9 n5 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 ad=0.145
++ as=0.145 pd=1.58 ps=1.58
++ nrd=0.58 nrs=0.58 sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* Power supply
+VDD vdd 0 1.8
+
+* Input vectors
+VA0 A0 0 PWL(0 1.8 40n 1.8)
+VA1 A1 0 PWL(0 1.8 40n 1.8)
+VA2 A2 0 PWL(0 0 20n 0 20.1n 1.8 40n 1.8)
+VA3 A3 0 PWL(0 0 20n 0 20.1n 1.8 40n 1.8)
+
+VB0 B0 0 PWL(0 1.8 40n 1.8)
+VB1 B1 0 PWL(0 0 30n 0 30.1n 1.8 40n 1.8)
+VB2 B2 0 PWL(0 1.8 10n 1.8 10.1n 0 30n 0 30.1n 1.8 40n 1.8)
+VB3 B3 0 PWL(0 0 10n 0 10.1n 1.8 20n 1.8 20.1n 0 30n 0 30.1n 1.8 40n 1.8)
+
+VCin Cin 0 PWL(0 0 30n 0 30.1n 1.8 40n 1.8)
+
+.control
+tran 0.05n 40n
+meas tran S0_5 find v(S0) at=5n
+meas tran S1_5 find v(S1) at=5n
+meas tran S2_5 find v(S2) at=5n
+meas tran S3_5 find v(S3) at=5n
+meas tran Cout_5 find v(Cout) at=5n
+
+meas tran S0_15 find v(S0) at=15n
+meas tran S1_15 find v(S1) at=15n
+meas tran S2_15 find v(S2) at=15n
+meas tran S3_15 find v(S3) at=15n
+meas tran Cout_15 find v(Cout) at=15n
+
+meas tran S0_25 find v(S0) at=25n
+meas tran S1_25 find v(S1) at=25n
+meas tran S2_25 find v(S2) at=25n
+meas tran S3_25 find v(S3) at=25n
+meas tran Cout_25 find v(Cout) at=25n
+
+meas tran S0_35 find v(S0) at=35n
+meas tran S1_35 find v(S1) at=35n
+meas tran S2_35 find v(S2) at=35n
+meas tran S3_35 find v(S3) at=35n
+meas tran Cout_35 find v(Cout) at=35n
+.endc
+.end

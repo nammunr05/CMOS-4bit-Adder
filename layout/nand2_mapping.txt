@@ -1,0 +1,60 @@
+CMOS FULL ADDER - NAND2 TRANSISTOR MAPPING
+
+NAND1:
+Inputs: A, B
+Output: n1
+PMOS: XMP1, XMP2
+NMOS: XMN1, XMN2
+
+NAND2:
+Inputs: A, n1
+Output: n2
+PMOS: XMP3, XMP4
+NMOS: XMN3, XMN4
+
+NAND3:
+Inputs: B, n1
+Output: n3
+PMOS: XMP5, XMP6
+NMOS: XMN5, XMN6
+
+NAND4:
+Inputs: n2, n3
+Output: X
+PMOS: XMP7, XMP8
+NMOS: XMN7, XMN8
+
+NAND5:
+Inputs: X, Cin
+Output: n5
+PMOS: XMP9, XMP10
+NMOS: XMN9, XMN10
+
+NAND6:
+Inputs: X, n5
+Output: n6
+PMOS: XMP11, XMP12
+NMOS: XMN11, XMN12
+
+NAND7:
+Inputs: Cin, n5
+Output: n7
+PMOS: XMP13, XMP14
+NMOS: XMN13, XMN14
+
+NAND8:
+Inputs: n6, n7
+Output: Sum
+PMOS: XMP15, XMP16
+NMOS: XMN15, XMN16
+
+NAND9:
+Inputs: n1, n5
+Output: Cout
+PMOS: XMP17, XMP18
+NMOS: XMN17, XMN18
+
+TOTAL:
+PMOS = 18
+NMOS = 18
+TOTAL MOSFETs = 36

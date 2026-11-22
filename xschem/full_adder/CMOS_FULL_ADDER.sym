@@ -1,0 +1,24 @@
+v {xschem version=3.4.4 file_version=1.2}
+G {type=subcircuit
+format="X@name @pinlist @symname"
+template="name=X1"}
+V {}
+S {}
+E {}
+L 4 0 -80 160 -80 {}
+L 4 160 -80 160 80 {}
+L 4 160 80 0 80 {}
+L 4 0 80 0 -80 {}
+B 5 -22.5 -62.5 -17.5 -57.5 {name=A dir=in pinnumber=1}
+B 5 -22.5 -32.5 -17.5 -27.5 {name=B dir=in pinnumber=2}
+B 5 -22.5 -2.5 -17.5 2.5 {name=Cin dir=in pinnumber=3}
+B 5 177.5 -42.5 182.5 -37.5 {name=Sum dir=out pinnumber=4}
+B 5 177.5 7.5 182.5 12.5 {name=Cout dir=out pinnumber=5}
+B 5 77.5 -102.5 82.5 -97.5 {name=vdd dir=in pinnumber=6}
+T {CMOS FULL ADDER} 15 -45 0 0 0.3 0.3 {}
+T {A} -40 -60 0 0 0.2 0.2 {}
+T {B} -40 -30 0 0 0.2 0.2 {}
+T {Cin} -50 0 0 0 0.2 0.2 {}
+T {Sum} 190 -40 0 0 0.2 0.2 {}
+T {Cout} 190 10 0 0 0.2 0.2 {}
+T {vdd} 85 -105 0 0 0.2 0.2 {}

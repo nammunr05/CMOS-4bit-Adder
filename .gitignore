@@ -1,0 +1,33 @@
+# Backup files
+*.bak
+*.before_X_fix
+
+# Root-level experimental Magic files
+/*.mag
+/*.ext
+
+# Temporary simulation output
+*.vcd
+simulation/adder_sim
+*.log
+
+# Older generated test decks and results
+simulation/xschem_4bit_test.spice
+simulation/xschem_4bit_test_v2.spice
+simulation/xschem_4bit_results.txt
+simulation/xschem_4bit_results_v2.txt
+simulation/xschem_full_adder_core.spice
+simulation/xschem_full_adder_test.spice
+
+# Generated Xschem netlists
+xschem/netlist/*.spice
+xschem/full_adder/full_adder_1bit.spice
+
+# Legacy root-level schematic
+/full_adder_1bit.sch
+
+# Older experimental CMOS decks
+simulation/cmos_4bit_*.spice
+simulation/cmos_4bit_results.txt
+simulation/cmos_full_adder_cell.spice
+simulation/cmos_inverter_test.spice
