@@ -1,0 +1,15 @@
+SKY130 NAND2_1 REFERENCE CELL
+Technology: sky130A
+Cell: sky130_fd_sc_hd__nand2_1
+DRC result: 0 errors (library-cell check only)
+
+Pins:
+flabel locali s 120 85 154 119 0 FreeSans 250 0 0 0 Y
+flabel locali s 120 153 154 187 0 FreeSans 250 0 0 0 Y
+flabel locali s 120 221 154 255 0 FreeSans 250 0 0 0 Y
+flabel locali s 28 221 62 255 0 FreeSans 250 0 0 0 B
+flabel locali s 212 221 246 255 0 FreeSans 250 0 0 0 A
+flabel nwell s 28 527 62 561 0 FreeSans 200 0 0 0 VPB
+flabel pwell s 28 -17 62 17 0 FreeSans 200 0 0 0 VNB
+flabel metal1 s 28 -17 62 17 0 FreeSans 200 0 0 0 VGND
+flabel metal1 s 28 527 62 561 0 FreeSans 200 0 0 0 VPWR
