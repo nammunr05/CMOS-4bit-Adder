@@ -32,7 +32,7 @@ The project includes:
 - A hierarchical 4-bit schematic in Xschem.
 - Transistor-level SPICE simulation testbenches.
 
-The 1-bit CMOS full-adder schematic uses 18 PMOS and 18 NMOS transistors, for a total of 36 MOSFETs.
+The custom 1-bit CMOS full-adder schematic uses 18 PMOS and 18 NMOS transistors, for a total of 36 MOSFETs.
 
 ## 6. Verilog Verification
 The Verilog testbench checks the following input combinations:
@@ -45,10 +45,10 @@ The Verilog testbench checks the following input combinations:
 | 0000 | 0000 | 0 | 0000 | 0 |
 | 1111 | 1111 | 1 | 1111 | 1 |
 
-The Verilog testbench completed successfully for these five test cases.
+The Verilog testbench completed successfully for all five test cases.
 
 ## 7. CMOS Simulation
-The 1-bit CMOS full-adder transistor-level simulation was verified for all eight input combinations.
+The custom 1-bit CMOS full-adder transistor-level simulation was verified for all eight input combinations.
 
 The hierarchical 4-bit CMOS circuit was simulated using Ngspice. The tested output voltages were approximately 0 V for logic LOW and 1.8 V for logic HIGH.
 
@@ -60,27 +60,41 @@ The tested arithmetic cases included:
 
 These results demonstrate the expected sum and carry outputs for the tested cases.
 
-## 8. Preliminary Layout Study
-The Sky130 standard-cell library was inspected using Magic. The NAND2 reference cell sky130_fd_sc_hd__nand2_1 was loaded using the Sky130A technology configuration.
+## 8. Sky130 Standard-Cell Study
+The Sky130 HD full-adder standard cell, sky130_fd_sc_hd__fa_1, was inspected and extracted using Magic.
 
-Magic reported zero DRC errors for this reference-cell check. This result applies only to the inspected library cell and is not a full-adder layout DRC result.
+The extracted standard-cell SPICE netlist was simulated using Ngspice. All eight combinations of A, B and Cin produced the expected Sum and Carry outputs.
 
-## 9. Current Project Status
+This library-cell experiment is separate from the custom 36-transistor Xschem full-adder design.
+
+## 9. Preliminary Physical-Layout Study
+A Magic placement file containing four Sky130 full-adder standard-cell instances (FA0 to FA3) was created.
+
+Magic successfully loaded the hierarchy, recognised the four instances and extracted a four-instance netlist. The placement geometry check reported zero DRC errors.
+
+This is a preliminary standard-cell placement experiment. The carry-chain and external signal routing, power connectivity verification, complete physical-layout DRC and LVS have not been completed. The four instances are not yet a fully connected physical 4-bit adder.
+
+The zero-error placement result applies only to the checked placement geometry; it is not a full-design DRC result.
+
+## 10. Current Project Status
 Completed:
-- Verilog design and testbench.
-- Xschem 1-bit CMOS full-adder schematic.
-- Hierarchical 4-bit schematic.
-- 1-bit and 4-bit transistor-level simulation for the tested cases.
-- Initial Sky130 NAND2 reference-cell inspection.
+- Verilog design and testbench verification.
+- Custom 1-bit CMOS full-adder schematic in Xschem.
+- Hierarchical 4-bit schematic in Xschem.
+- 1-bit and 4-bit transistor-level simulations for the tested cases.
+- Sky130 full-adder standard-cell extraction and simulation for all eight input combinations.
+- Preliminary four-instance Magic placement and extraction.
+- Preliminary placement geometry DRC check.
 
 Pending:
 - Complete custom physical layout of the 1-bit full adder.
-- Complete 4-bit physical layout and routing.
+- Complete 4-bit physical layout and signal routing.
+- Power and ground connectivity verification.
 - Full-design DRC.
-- Layout extraction and Netgen LVS verification.
+- Layout-versus-schematic (LVS) verification.
 
-## 10. Conclusion
-The 4-bit ripple-carry adder was designed using Verilog and CMOS schematic techniques. Functional verification and transistor-level simulations produced the expected results for the tested input combinations. Further work is required to complete the physical layout, full-design DRC and LVS verification.
+## 11. Conclusion
+The 4-bit ripple-carry adder was designed using Verilog and CMOS schematic techniques. Functional verification and transistor-level simulations produced the expected results for the tested input combinations. A preliminary Sky130 standard-cell placement and extraction study was also performed. Further work is required to complete the physical layout, routing, full-design DRC and LVS verification.
 
-## 11. Project Repository
+## 12. Project Repository
 GitHub: https://github.com/nammunr05/CMOS-4bit-Adder
