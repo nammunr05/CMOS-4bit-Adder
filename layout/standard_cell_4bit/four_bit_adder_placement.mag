@@ -1,0 +1,23 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1795443543
+<< nwell >>
+<< pwell >>
+use sky130_fd_sc_hd__fa_1 FA0
+timestamp 657469686
+transform 1 0 0 0 1 0
+box 0 0 1472 544
+use sky130_fd_sc_hd__fa_1 FA1
+timestamp 657469686
+transform 1 0 1600 0 1 0
+box 1600 0 3072 544
+use sky130_fd_sc_hd__fa_1 FA2
+timestamp 657469686
+transform 1 0 3200 0 1 0
+box 3200 0 4672 544
+use sky130_fd_sc_hd__fa_1 FA3
+timestamp 657469686
+transform 1 0 4800 0 1 0
+box 4800 0 6272 544
+<< end >>
